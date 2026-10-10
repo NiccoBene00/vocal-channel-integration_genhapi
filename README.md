@@ -157,7 +157,7 @@ Only files I wrote are included here. Everything else belongs to the GenHAPI fra
 │   ├── utils/TTS_service.py
 │   ├── views/voice_views.py        # transcribe_audio_view, delete_audio_played
 │   └── static/js/voice_recording.js
-└── docs/                           # integration notes
+└── docs/                           # thesis document
 ```
 <!-- TODO: copia nella repo questi file, uno per uno:
   1. `web/agents/audio_agent.py`   -> `src/agents/audio_agent.py`       (file interamente tuo)
