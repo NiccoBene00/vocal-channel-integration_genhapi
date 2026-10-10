@@ -81,43 +81,8 @@ def normalize_italian(text: str) -> str:
 
     text = re.sub(r"\b(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])\b", ymd_date_norm, text)
 
-    """
-    # parole alfabetiche con trattini ("anno-mese-giorno" -> "anno mese giorno")
-    # es. "anno-mese-giorno" -> "anno mese giorno"
-    text = re.sub(r"\b([A-Za-zÀ-ÖØ-öø-ÿ]+(?:-[A-Za-zÀ-ÖØ-öø-ÿ]+)+)\b",
-                  lambda m: m.group(1).replace('-', ' '),
-                  text)
-
-    #codici con separatori (ABCD-1234, RFC/HTTP-1.1, YYYY-MM-DD)
-    text = re.sub(
-        r"\b(?:[A-Za-z0-9]+(?:[-_./:][A-Za-z0-9]+)+)\b",
-        lambda m: spell_token(m.group(0)),
-        text
-    )
-
-    #sigle alfabetiche pure in MAIUSCOLO (>=4)
-    text = re.sub(r"\b[A-Z]{4,}\b", lambda m: spell_token(m.group(0)), text)
-
-    #alfanumerici lunghi (>=8) senza separatori
-    text = re.sub(
-        r"\b(?=[A-Za-z0-9]*[A-Za-z])(?=[A-Za-z0-9]*\d)[A-Za-z0-9]{8,}\b",
-        lambda m: spell_token(m.group(0)),
-        text
-    )
-
-    #numerici lunghi (>=6) -> letti cifra per cifra
-    text = re.sub(r"\b\d{6,}\b",
-                  lambda m: " ".join(num2words(int(ch), lang='it') for ch in m.group(0)),
-                  text)
-
-    #numeri rimanenti
-    text = re.sub(r"\b\d+\b", lambda m: num2words(int(m.group(0)), lang='it'), text)
-
-    return text
-    """
-
+    
     # --- NUMERI: decimali e migliaia prima di tutto ---
-
     def norm_decimal(int_part: str, frac_part: str, sep_word: str) -> str:
         # parte intera come numero
         int_words = num2words(int(int_part), lang='it') if int_part else "zero"
