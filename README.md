@@ -5,11 +5,11 @@ Speech-to-text and text-to-speech integration for **GenHAPI**, a multi-agent cha
 **Stack:** Python 3.11 · Django · Vosk (STT) · Coqui TTS · pydub / ffmpeg · Web Audio / MediaRecorder API · Docker
 
 > **Context.** Bachelor's thesis project, University of Florence (UNIFI), Department of Information Engineering, A.Y. 2024-2025. Supervisors: Prof. Pietro Pala and Prof. Andrea Ferracani.
-> GenHAPI was developed by the **MICC lab** of the University of Florence and is **not public**. I designed and implemented the voice module on top of it. **This repository contains only the code I wrote**, plus a technical description of how it fits into the system.
+> GenHAPI was developed by the **MICC lab** of the University of Florence and his code it is not public. I designed and implemented the voice module on top of it. **This repository contains only the code I wrote**, plus a technical description of how it fits into the system.
 > Thesis (in Italian): *"Sviluppo di un Modulo di Interazione Vocale per un Sistema Conversazionale Multi-Agente Orientato all'Automazione"*.
-<!-- TODO: se la tesi è pubblicata nel repository di ateneo UNIFI, aggiungi qui il link; altrimenti lascia così e non caricare il PDF. -->
+See [thesis](docs/...).
 
-## Highlights
+## Main features
 
 - **Voice in, voice out.** Press the microphone button, speak, and the request enters the normal GenHAPI pipeline; the answer is displayed and read aloud automatically. Typing still works exactly as before.
 - **Non-invasive design.** The voice logic lives in its own agent and two services. It pre-processes the user's audio and post-processes the text reply, and does not change how the agents reason.
@@ -24,8 +24,8 @@ Preliminary A/B evaluation, voice vs. text, on 6 automation tasks (invoice creat
 | | Result |
 |---|---|
 | Intent recognized | in **all tasks**, in both conditions |
-| Time to complete a request | voice faster in most tasks, **by about 10-35%** (e.g. 72.8 s → 46.7 s for invoice creation) |
-| Transcription errors | 2, both on less common Italian terms; none in text mode |
+| Time to complete a request | voice faster in most of the measured tasks, **by about 10-35%** |
+| Transcription errors | a few errors, all on less common Italian terms; none in text mode |
 
 This evaluation was run by a **single tester** (the author) simulating 5 virtual users, in quiet conditions, so it is **indicative, not statistically significant**. Details in [Evaluation](#evaluation).
 
@@ -212,6 +212,4 @@ Each task was phrased in 5 different ways to simulate 5 virtual users (p01-p05).
 - **GenHAPI** was developed by the MICC lab, University of Florence. It is not included in this repository and is not covered by any license here. See: *GenHAPI: Conversational Orchestration over MCP to Unlock Complex Legacy Workflows* ([Springer](https://link.springer.com/chapter/10.1007/978-3-032-31048-4_15)).
 - **Vosk** (Apache 2.0) and **Coqui TTS** (MPL 2.0) are used as libraries. The speech models have their own licenses.
 - Thanks to Prof. Pietro Pala and Prof. Andrea Ferracani for their supervision, and to the MICC lab for making the framework available.
-<!-- TODO: autori e anno dell'articolo Springer: aggiungili dalla pagina del capitolo.
-TODO: aggiungi un file LICENSE (MIT) per i tuoi file SOLO dopo aver avuto il via libera dei relatori/MICC. Fino ad allora, puoi lasciare il repository senza licenza.
-TODO (facoltativo): aggiungi una GIF dimostrativa solo se il laboratorio accetta che si veda l'interfaccia di GenHAPI. -->
+
