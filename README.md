@@ -7,7 +7,7 @@ Speech-to-text and text-to-speech integration for **GenHAPI**, a multi-agent cha
 > **Context.** Bachelor's thesis project, University of Florence (UNIFI), Department of Information Engineering, A.Y. 2024-2025. Supervisors: Prof. Pietro Pala and Prof. Andrea Ferracani.
 > GenHAPI was developed by the **MICC lab** of the University of Florence and his code it is not public. I designed and implemented the voice module on top of it. **This repository contains only the code I wrote**, plus a technical description of how it fits into the system.
 > Thesis (in Italian): *"Sviluppo di un Modulo di Interazione Vocale per un Sistema Conversazionale Multi-Agente Orientato all'Automazione"*.
-See [thesis](docs/...).
+See [thesis](docs/Sviluppo_di_un_modulo_di_interazione_vocale_per_un_sistema_conversazionale_multi_agente_orientato_all_automazione.pdf).
 
 ## Main features
 
